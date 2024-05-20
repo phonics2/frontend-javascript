@@ -105,6 +105,29 @@
         </pre>
         나이 : <input type="number" id="나이값">
         <button onclick="체크4()">확인하기</button>
+        
+        <script>
+            function 체크4(){
+            //입력한 나이 값 가져오기
+            const age = document.getElementById("나이값");
+            const 입력받은나이 = age.value;
+            //const 입력받은나이 = document.getElementById("나이값").value; 위와 동일한 코드
+            //만약에 0이랑 같거나 0보다 큰데,  13보다 같거나 작을 때
+
+            let 메세지;
+
+
+            if (입력받은나이 >= 0 && 입력받은나이 <= 13){
+               메세지 = "어린이";
+            } else if(입력받은나이 >= 14 && 입력받은나이 <= 19){
+               메세지 = "청소년";
+            } else{
+               메세지 = "성인";
+            }
+            console.log("키보드로 입력받은 나이는 !!! "+입력받은나이);
+                alert(메세지);
+        }
+        </script>
     </body>
 
 </html>
