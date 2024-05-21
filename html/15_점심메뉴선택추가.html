@@ -15,13 +15,30 @@
                 <!-- 나중에 메뉴 추가하기를 했을 때 추가될 것-->
             </ul>
         </div>
+        <style>
+            button{
+                padding: 10px 20px;
+                background-color: green;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            /*버튼 위에 마우스 올렸을 때 색상변경*/
+            button:hover{
+                background-color: yellowgreen;
+                
+            }
+            ul{
+                list-style: none;
+            }
+        </style>
         <button onclick="메뉴선택()">메뉴선택하기</button>
         <button onclick="메뉴추가()">메뉴추가하기</button>
         <script>
             //메뉴추가 기능만들기
             function 메뉴추가(){
                 const 메뉴리스트 = document.getElementById("menu-list");
-                
 
                 //메뉴추가 입력 프롬포트 추가하기
                 const 신메뉴 = prompt("새로운 메뉴를 입력해주세요 : ");

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <style>
+            body{
+                background-color: rgb(243, 239, 235);
+                
+            }
+            .메인{
+                background-color: white;
+                margin-top: 20px;
+                padding: 10px;
+                width: 70%;
+                display: block;
+                margin: 0 auto;
+                box-shadow: 0 0 2px gray;
+                font-size: large;
+            }
+            h1{
+                text-align: center;
+                padding-top: 60px;
+            }
+            .선택{
+                background-color: rgb(243, 239, 235);
+                margin: 5px;
+                padding: 10px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>점심 메뉴 고르기</h1>
+        <div class="메인">메뉴리스트
+            <div class="선택" onclick="중식()">중식</div>
+            <div class="선택" onclick="한식()">한식</div>
+            <div class="선택" onclick="일식()">일식</div>
+        </div>
+    </body>
+    
+</html>

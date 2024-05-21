@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+    .a{
+        text-align: right;
+    }
+    .hidden{
+        display: none;
+    }
+    </style>
+  </head>
+  <body>
+   <form>
+      <div class="회원가입">
+        <table>
+          <tr>
+            <td class="a">이름 :</td>
+            <td><input type="text" id="user_name" required /></td>
+          </tr>
+          <tr>
+            <td class="a">이메일 : </td>
+            <td><input type="email" id="user_email" required /></td>
+            
+          </tr>
+          <tr>
+            <td class="a">비밀번호 : </td>
+            <td><input type="password" id="user_pw" required /></td>
+          </tr>
+          <tr>
+            <td class="a">비밀번호확인 : </td>
+            <td><input type="password" id="user_pw_confirm" required /></td>
+            <td><button onclick="비밀번호중복여부()">비번중복</button></td>
+          </tr>
+        </table>
+        <button onclick="회원가입()">회원가입</button>
+        <br><br><br>
+     
+        <p>↓이용약관보기↓</p>
+        <button onclick="이용약관()">↓↓↓↓</button>
+        <br><br>
+        <div id="이용약관" class="hidden">이부분은 이용약관입니다.</div>
+    </form>    
+        <script>
+            function 회원가입(){
+                const 이름 = document.getElementById("user_name").value;
+                const 이메일 = document.getElementById("user_email").value;
+                const 비밀번호 = document.getElementById("user_pw").value;
+                const 비밀번호확인 = document.getElementById("user_pw_confirm").value;
+                if(이름 == '고영희' && 이메일 == 'ko@kh.kh'){
+                    alert("이미 가입된 회원입니다.");
+                }else if(비밀번호 != 비밀번호확인){
+                    alert("비밀번호가 서로 다릅니다.");
+                }else{
+                    alert("회원가입완료.");
+                }
+            }
+            function 이용약관(){
+                const 약관 = document.getElementById("이용약관");
+                if(약관.classList.contains("hidden")){
+                    약관.classList.remove("hidden");
+                } else{
+                    약관.classList.add("hidden");
+                }
+            }
+        </script>
+      </div>
+    
+  </body>
+</html>
