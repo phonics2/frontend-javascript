@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>채팅프로그램</title>
+        <meta charset="utf-8">
+        <style>
+            #컨테이너{
+                width: 300px;
+                height: 400px;
+                border: 2px solid #ccc;
+                display: flex;
+                /*div 안에서 가운데로 정렬하기*/
+                justify-content: center;
+                /*
+                div 안에서 오른쪽 끝으로 정렬하기
+                justify-content: space-between;
+                */
+                flex-direction: column;
+            }
+            #chat{
+                flex: 1;
+                padding: 10px;
+                border-bottom: 2px solid #ccc;
+                /*overflow-y auto;  세로축 스크롤 고정하기
+                  overflow-x auto;  가로축 스크롤 고정하기
+                */
+                overflow-y: auto;
+            }
+            .m{
+                padding: 5px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+            }
+            .user-m{
+                background-color: lightblue;
+                /*
+                align-self : 안에 있는 태그들 정렬 상태 설정
+                flex-end   : 태그를 맨 끝부분(아래쪽 또는 오른쪽) 정렬
+                */
+                align-self: flex-end;
+            }
+            .bot-m{
+                background-color: lightpink;
+                /*
+                align-self : 안에 있는 태그들 정렬 상태 설정
+                flex 태그의 축 정렬을 설정
+                flex-end로 끝나는 태그 밑에 맨 첫번째로 텍스트를 넣어주겠다.
+                flex-start   : 태그를 맨 끝부분(위쪽 또는 왼쪽) 정렬
+                */
+                align-self: flex-start;
+            }
+            #inputst{
+                display: flex;
+            }
+            #inputst input{
+                flex: 1;
+                padding: 10px;
+                border: none;
+                border-top: 2px solid #ccc;
+            }
+            button{
+                padding: 10px;
+                border: none;
+                background-color: #007eff;
+                color: white;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>챗봇상담하기</h1>
+        <div id="컨테이너">
+            <div id="chat"></div>
+            <div id="inputst">
+                <input type="text" id="user-input" placeholder="입력하세요.">
+                <button onclick="전송()">보내기</button>
+            </div>
+        </div>
+        <script>
+            //자바스크립트는 매개변수가 함수에서 설정한 매개변수와 작성해야하는
+            // 개수가 달라도 문제없이 실행됨
+            보이기("봇","bot");
+            function 보이기(message,sender){
+                //채팅내용 가져오기
+                const chatbox = document.getElementById("chat");
+                //내용 안에 div 추가하기
+                const messageElement = document.createElement("div");
+                
+                //claasList로   div안에 클래스 추가하기
+                messageElement.classList.add("m",+sender+"-m");
+                
+                //채팅 내용 보이기
+                messageElement.textContent = message;
+                
+                //보낸 내용 추가하기
+                chatbox.appendChild(messageElement);
+
+            }
+            function 전송(){
+                
+                const inputbox = document.getElementById("user-input");
+                
+                const message = inputbox.value.trim();
+
+                if(message == ""){
+                    return;
+                }
+                보이기(message,"user");
+                inputbox.value = "";
+                //채팅봇 띄우기
+                setTimeout(()=>{
+                    보이기("챗봇입니다.","bot")
+                },1000); //1초후에 메세지 보이기
+            }
+        </script>
+    </body>
+</html>
