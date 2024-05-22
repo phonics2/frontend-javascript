@@ -79,7 +79,7 @@
         <script>
             //자바스크립트는 매개변수가 함수에서 설정한 매개변수와 작성해야하는
             // 개수가 달라도 문제없이 실행됨
-            보이기("봇","bot");
+            보이기("봇입니다.","bot");
             function 보이기(message,sender){
                 //채팅내용 가져오기
                 const chatbox = document.getElementById("chat");
@@ -102,9 +102,8 @@
                 
                 const message = inputbox.value.trim();
 
-                if(message == ""){
-                    return;
-                }
+                if(message == "") return;
+                    
                 보이기(message,"user");
                 inputbox.value = "";
                 //채팅봇 띄우기
