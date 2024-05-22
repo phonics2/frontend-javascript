@@ -3,7 +3,7 @@
     <head>
         <title>이벤트 리스너 사용하기</title>
         <meta charset="utf-8">
-        <script src="../js/23_onkey-onpress.js"></script>
+        
     </head>
     <body>
         <h1>KH 항공 가입하기</h1>
@@ -17,10 +17,12 @@
         <p>input이나 textarea 에 값을 입력후
            키보드에서 (한글을 제외한) 모든 키를 누르면
            버튼을 따로 클릭하지 않아도 클릭한 것처럼 작동
+           
+           onkeypress - 권장하진 않음
+           onkeydown  - 사용
         </p>
-       
-        <input type="text" onkeypress="엔터기능(e)">
-       
+        <input type="text" onkeypress="엔터기능(event)">
     </body>
+    <script src="../js/23_onkey-onpress.js"></script>
 
 </html>
