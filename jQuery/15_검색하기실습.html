@@ -13,6 +13,9 @@
           $("li").each(function () {
             //for -each 처럼 반복문
             var 텍스트 = $(this).text();
+            console.log("**********************");
+            console.log(텍스트); //자바에서 System.out.println(); 같은 기능
+            
             //indexOf 는 배열에서 특정 태그의 자리값을 찾는데 사용
             // index 0부터 시작 -1은 없는 값이기 때문에
             if (텍스트.indexOf(검색박스) === -1) {
