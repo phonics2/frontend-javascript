@@ -3,7 +3,7 @@
     <head>
         <title>마우스 올리기 게임</title>
         <meta charset="utf-8">
-        <script src="jquery_3.7.1.js"></script> 
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
         <script>
             $(document).ready(function(){
                 $(".box").on("mouseenter", function(){
@@ -17,7 +17,7 @@
                 for(let i = 0; i < 6; i++){
                     const a = Math.floor(Math.random() * 16);
                     색상 += 색상코드[a];
-                    //색상 += 색상코드[Math.floor(Math.random() * 16)]; 
+                    //(한줄로 줄이기)   색상 += 색상코드[Math.floor(Math.random() * 16)]; 
                     
                 }
                 return 색상; // 완성된 색상 코드를 반환
