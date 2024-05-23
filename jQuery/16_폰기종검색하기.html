@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>폰기종검색실습</title>
+        <meta charset="utf-8">
+        <script src="jquery-3.7.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                //검색박스id를 가져와서 keyup
+                $("#검색박스").keyup(function(){
+                    //검색한내용 밸류 가져오기 val()
+                    const 검색내용 = $(this).val();
+                    var 검색결과 = false;
+                    $("#핸드폰검색 li").each(function(){
+                        //li에 있는 텍스트 text 가져오기
+                        var 텍스트 = $(this).text();
+                        if(텍스트.indexOf(검색내용) === -1){
+                            $(this).hide();
+                        } else{
+                            $(this).show();
+                        }
+                    })
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="컨테이너">
+            <input type="text" id="검색박스" placeholder="핸드폰을 검색해주세요.">
+            <ul id="핸드폰검색">
+                <li>Galaxy S21</li>
+                <li>iPhone 12</li>
+                <li>Google Pixel 5</li>
+                <li>OnePlus 9</li>
+                <li>Xiaomi Mi 11</li>
+                <li>LG Velvet</li>
+            </ul>
+            
+        </div>
+    </body>
+</html>
